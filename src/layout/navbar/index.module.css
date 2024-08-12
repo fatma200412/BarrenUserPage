@@ -1,6 +1,8 @@
 nav {
-  border: 1px solid black;
-  width: 1000px;
+  /* border: 1px solid black; */
+  max-width: 1200px;
+  width: 100%;
+  background-color: white;
   margin: 0 auto;
 }
 

@@ -1,0 +1,59 @@
+.cardsSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+/*
+    .exploreEventsSectionFilterAndCards
+      .filterAndCards
+      .cardsSection
+      .MuiGrid2-root {
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .exploreEventsSectionFilterAndCards .filterAndCards .cardsSection .ant-card {
+      width: 100%;
+      max-width: 290px;
+    } */
+.cardImg {
+  transition: 1s ease;
+}
+.cardImg:hover {
+  transform: scale(1.05);
+}
+.cardFooter {
+  background-color: #fafdf9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  color: #717171;
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none solid rgb(113, 113, 113);
+}
+.markBtn {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  border: none;
+  background-color: #6ac045;
+  padding: 18px;
+  border-radius: 50%;
+  /* width: 25px;
+      height: 25px; */
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+.cardsSection .cardSectionAllBtn button {
+  padding: 15px 20px;
+  border: none;
+  background-color: #6ac045;
+  color: white;
+}

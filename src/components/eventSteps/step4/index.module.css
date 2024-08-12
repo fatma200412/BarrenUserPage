@@ -1,0 +1,13 @@
+.step {
+  width: 100%;
+}
+.step .title p {
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none solid rgb(0, 0, 0);
+  margin-bottom: 50px;
+}
+.step .iconsAndTitle .grid {
+  width: 100%;
+  margin: 0 auto;
+}

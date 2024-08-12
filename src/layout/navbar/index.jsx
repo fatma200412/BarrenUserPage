@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import style from "./index.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
-import logo from "../../assets/images/header/logo-icon.svg";
+import logo from "../../assets/images/header/logo (1).svg";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import MultipleStopIcon from "@mui/icons-material/MultipleStop";
@@ -29,10 +29,10 @@ function Navbar() {
           <div className="container-fluid">
             <div className={style.row}>
               <div className={style.barAndLogo}>
-                <button className={style.iconBtn}>
+                {/* <button className={style.iconBtn}>
                   <MenuIcon className={style.barIcon} />
-                </button>
-                <Link to="/admin">
+                </button> */}
+                <Link to="/">
                   <img className={style.logo} src={logo} alt="" />
                 </Link>
                 {/* <img src={logo} alt="" /> */}
@@ -40,12 +40,25 @@ function Navbar() {
 
               <div className={style.iconAndBtns}>
                 <div className={style.naviget}>
-                  <Link to="/admin/myHome" className={style.iconAndNav}>
-                    <MultipleStopIcon /> My Home
+                  <Link to="/" className={style.iconAndNav}>
+                    Home
                   </Link>
-                  <a href="" className={style.iconAndNav}>
-                    <ExploreIcon /> Explore Events
-                  </a>
+                  <Link to="/exploreEvents" className={style.iconAndNav}>
+                    Explore Events
+                  </Link>
+                  <Link to="/" className={style.iconAndNav}>
+                    Pricing
+                  </Link>
+                  <Link to="/" className={style.iconAndNav}>
+                    Blog
+                  </Link>
+                  <Link to="/" className={style.iconAndNav}>
+                    Help
+                  </Link>
+                  <Link to="/" className={style.iconAndNav}>
+                    Pages
+                  </Link>
+
                   <button className={style.calendar}>
                     <CalendarMonthIcon
                       style={{

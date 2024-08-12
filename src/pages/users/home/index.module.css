@@ -1,3 +1,291 @@
-.home {
-  background-color: aqua;
+.homePage {
+  /* max-width: 1200px; */
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f5f7f9;
+}
+.headerHome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10% 5%;
+  /* min-width: 1200px; */
+  width: 100%;
+  background-image: url("https://www.gambolthemes.net/html-items/barren-html/disable-demo-link/images/banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 80px;
+}
+.headerHome h1 {
+  color: #212529;
+  font-size: 32px;
+  font-weight: 600;
+  text-decoration: none solid rgb(33, 37, 41);
+  text-align: center;
+  /* min-width: 500px; */
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 0 10%;
+}
+.headerHome p {
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none solid rgb(0, 0, 0);
+  text-align: center;
+  /* min-width: 500px; */
+  width: 100%;
+  padding: 0 5%;
+  margin-bottom: 30px;
+}
+.headerHome button {
+  padding: 15px 20px;
+  border: none;
+  background-color: #6ac045;
+  color: white;
+}
+.exploreEventsSectionFilterAndCards {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 0 5%;
+}
+.exploreEventsSectionFilterAndCards .filterAndCards {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  flex-direction: column;
+}
+.exploreEventsSectionFilterAndCards .filterAndCards .title h1 {
+  font-size: 32px;
+  font-weight: 600;
+  text-decoration: none solid rgb(0, 0, 0);
+  margin-bottom: 20px;
+}
+.exploreEventsSectionFilterAndCards .filterAndCards .timesBtn,
+.exploreEventsSectionFilterAndCards .filterAndCards .categoriyaBtns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.exploreEventsSectionFilterAndCards .filterAndCards .timesBtn button {
+  background-color: white;
+  padding: 8px 10px;
+  border: 1px solid #cbced1;
+  border-radius: 15px;
+  flex: 1;
+}
+.exploreEventsSectionFilterAndCards .filterAndCards .categoriyaBtns button {
+  background-color: white;
+  padding: 8px 13px;
+  border: 1px solid #cbced1;
+  flex: 1;
+}
+
+.onlineAndVenueEvents {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 100px 5%;
+  background-color: white;
+}
+.onlineAndVenueEvents .swiperEvents {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  flex-direction: column;
+}
+.onlineAndVenueEvents .swiperEvents .title h1 {
+  font-size: 32px;
+  font-weight: 600;
+  text-decoration: none solid rgb(0, 0, 0);
+  margin-bottom: 25px;
+}
+.onlineAndVenueEvents .swiperEvents .des p {
+  color: #717171;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none solid rgb(113, 113, 113);
+  width: 90%;
+  margin-bottom: 40px;
+}
+
+.featureOverloadYouNeed {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 100px 5%;
+  /* background-color: white; */
+}
+.featureOverloadYouNeed .headingDesAndIcons {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  flex-direction: column;
+}
+.featureOverloadYouNeed .headingDesAndIcons .title h1 {
+  font-size: 32px;
+  font-weight: 600;
+  text-decoration: none solid rgb(0, 0, 0);
+  margin-bottom: 25px;
+}
+.featureOverloadYouNeed .headingDesAndIcons .des {
+  border-bottom: 1px solid #717171;
+  width: 86%;
+}
+.featureOverloadYouNeed .headingDesAndIcons .des p {
+  color: #717171;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none solid rgb(113, 113, 113);
+  margin-bottom: 50px;
+}
+.featureOverloadYouNeed .headingDesAndIcons .cards {
+  margin-bottom: 50px !important;
+}
+
+.eventSteps {
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 5%;
+  background-color: white;
+}
+.eventSteps .steps {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  flex-direction: column;
+}
+.eventSteps .steps .title h1 {
+  font-size: 32px;
+  font-weight: 600;
+  text-decoration: none solid rgb(0, 0, 0);
+  margin-bottom: 25px;
+}
+.eventSteps .steps .des {
+  width: 86%;
+}
+.eventSteps .steps .des p {
+  color: #717171;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none solid rgb(113, 113, 113);
+  margin-bottom: 50px;
+}
+
+.navTabs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #efefef;
+  background-color: white;
+  /* padding: 10px; */
+}
+
+.navTabs button {
+  padding: 20px 50px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: lighter;
+  color: #717171;
+  transition: all 0.3s ease;
+}
+.navTabs button span {
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
+  display: inline-block;
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+
+.navTabs button:hover {
+  font-size: 22px;
+  font-weight: lighter;
+}
+
+.navTabs .activeTab {
+  background-color: #6ac045;
+  font-weight: bold;
+  color: white;
+  font-size: 22px;
+  font-weight: lighter;
+  transition: all 1s ease;
+}
+.navTabs .activeTab span {
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-block;
+  margin: 10px;
+  /* background-color: #6ac045; */
+  font-weight: bold;
+  color: white;
+  transition: all 1s ease;
+}
+
+.tabContent {
+  /* padding: 20px; */
+  /* border: 1px solid #ddd; */
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: height 5s ease, opacity 10s ease;
+}
+.activeContent {
+  height: auto; /* Allow height to adjust based on content */
+  opacity: 1; /* Make content visible */
+}
+
+.organisationGlobe {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 100px 5%;
+  background-color: #6ac045;
+}
+.organisationGlobe .titleAndSlides {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.organisationGlobe .titleAndSlides .title h1 {
+  font-size: 32px;
+  font-weight: 600;
+  text-decoration: none solid rgb(255, 255, 255);
+  margin-bottom: 50px;
+  color: white;
+}
+
+.organisationGlobe  .cards {
+  margin-bottom: 50px !important;
+  width: 100%;
 }

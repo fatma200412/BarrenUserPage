@@ -1,0 +1,37 @@
+.eventsPage {
+  /* max-width: 1200px; */
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f5f7f9;
+}
+.eventsHeading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10% 5%;
+  /* min-width: 1200px; */
+  width: 100%;
+  background-image: url("https://www.gambolthemes.net/html-items/barren-html/disable-demo-link/images/banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 80px;
+}
+.eventsHeading h1 {
+  color: #212529;
+  font-size: 32px;
+  font-weight: 600;
+  text-decoration: none solid rgb(33, 37, 41);
+  text-align: center;
+  /* min-width: 500px; */
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 0 10%;
+}
+.exploreEventsSectionFilterAndCards {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 0 5%;
+}
