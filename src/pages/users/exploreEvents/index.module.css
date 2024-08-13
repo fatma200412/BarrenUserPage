@@ -29,9 +29,74 @@
   margin-bottom: 30px;
   padding: 0 10%;
 }
+.eventsHeading .formDiv {
+  width: 50%;
+  margin: 0 auto;
+  /* border: 1px solid black; */
+}
+
+.eventsHeading .formDiv form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  flex-wrap: wrap;
+}
+
+.eventsHeading .formDiv form .selectEvents .events {
+  padding: 15px 50px;
+  margin-right: 5px;
+  border: none;
+}
+.eventsHeading .formDiv form .selectCategories .categories {
+  padding: 15px 50px;
+  margin-right: 10px;
+  border: none;
+}
+.eventsHeading .formDiv form .submitBtn .findBtn {
+  padding: 10px 35px;
+  margin-right: 10px;
+  border: none;
+  background-color: #6ac045;
+  font-size: 13.3333px;
+  color: white;
+  font-weight: 400;
+}
 .exploreEventsSectionFilterAndCards {
   width: 100%;
   margin: 0 auto;
-  margin-bottom: 50px;
   padding: 0 5%;
+}
+
+.exploreEventsSectionFilterAndCards .filterAndCards {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.exploreEventsSectionFilterAndCards .filterAndCards .timesBtn,
+.exploreEventsSectionFilterAndCards .filterAndCards .categoriyaBtns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.exploreEventsSectionFilterAndCards .filterAndCards .timesBtn button {
+  background-color: white;
+  padding: 8px 10px;
+  border: 1px solid #cbced1;
+  border-radius: 15px;
+  flex: 1;
+}
+.exploreEventsSectionFilterAndCards .filterAndCards .categoriyaBtns button {
+  background-color: white;
+  padding: 8px 13px;
+  border: 1px solid #cbced1;
+  flex: 1;
 }

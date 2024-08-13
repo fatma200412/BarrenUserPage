@@ -46,18 +46,13 @@ function Navbar() {
                   <Link to="/exploreEvents" className={style.iconAndNav}>
                     Explore Events
                   </Link>
-                  <Link to="/" className={style.iconAndNav}>
-                    Pricing
+                  <Link to="/help" className={style.iconAndNav}>
+                    FAQ
                   </Link>
-                  <Link to="/" className={style.iconAndNav}>
-                    Blog
+                  <Link to="/contactUs" className={style.iconAndNav}>
+                    Contact Us
                   </Link>
-                  <Link to="/" className={style.iconAndNav}>
-                    Help
-                  </Link>
-                  <Link to="/" className={style.iconAndNav}>
-                    Pages
-                  </Link>
+          
 
                   <button className={style.calendar}>
                     <CalendarMonthIcon

@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./index.module.css";
 
-import { Grid } from "@mui/material";
+import Grid from "@mui/system/Unstable_Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
