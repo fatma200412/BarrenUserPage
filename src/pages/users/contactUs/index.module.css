@@ -1,0 +1,77 @@
+.faqPage {
+  /* max-width: 1200px; */
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f5f7f9;
+}
+.headerHelp {
+  width: 100%;
+  margin: 0 auto;
+  background-image: url("https://www.gambolthemes.net/html-items/barren-html/disable-demo-link/images/banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2%;
+}
+.headerHelp .navigate {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  flex-direction: column;
+}
+.headerHelp .navigate p {
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none solid rgb(106, 192, 69);
+}
+.headerHelp .navigate p .home {
+  color: black;
+}
+.headerHelp .navigate p .home:hover {
+  color: #6ac045;
+}
+.headerHelp .navigate p .faq {
+  color: #717171;
+}
+
+.faqAndAnswerSection {
+  width: 100%;
+  margin: 0 auto;
+  padding: 5%;
+}
+.faqAndAnswerSection .faqSection {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  flex-direction: column;
+}
+.faqAndAnswerSection .faqSection .title {
+  /* margin: 0 auto; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.faqAndAnswerSection .faqSection .title h1 {
+  font-size: 32px;
+  font-weight: 600;
+  text-decoration: none solid rgb(0, 0, 0);
+  margin-bottom: 20px;
+}
+.faqAndAnswerSection .faqSection .title p {
+  color: #717171;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none solid rgb(113, 113, 113);
+  margin-bottom: 40px;
+}

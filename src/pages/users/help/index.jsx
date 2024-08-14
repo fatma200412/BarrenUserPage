@@ -38,7 +38,7 @@ function FAQ() {
                 Home
               </Link>{" "}
               /{"   "}
-              <Link to="help" className={style.faq}>
+              <Link to="" className={style.faq}>
                 Frequently asked questions{" "}
               </Link>
             </p>

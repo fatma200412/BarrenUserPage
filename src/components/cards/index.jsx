@@ -390,7 +390,7 @@ function Cards() {
         </Grid>
       </Grid>
       <div className={style.cardSectionAllBtn}>
-        <button>Browse All</button>
+        <button> Browse All</button>
       </div>
     </div>
   );

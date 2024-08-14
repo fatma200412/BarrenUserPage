@@ -4,6 +4,7 @@
   margin: 0 auto;
   background-color: #f5f7f9;
 }
+
 .eventsHeading {
   display: flex;
   align-items: center;
@@ -16,9 +17,22 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 0 auto;
   margin-bottom: 80px;
 }
-.eventsHeading h1 {
+
+.eventsHeading .headerForm {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.eventsHeading .headerForm h1 {
   color: #212529;
   font-size: 32px;
   font-weight: 600;
@@ -29,38 +43,45 @@
   margin-bottom: 30px;
   padding: 0 10%;
 }
-.eventsHeading .formDiv {
+.eventsHeading .headerForm .formDiv {
   width: 50%;
   margin: 0 auto;
   /* border: 1px solid black; */
 }
 
-.eventsHeading .formDiv form {
+.eventsHeading .headerForm .formDiv form {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px;
+  /* padding: 5px; */
   flex-wrap: wrap;
+  gap: 10px;
 }
 
-.eventsHeading .formDiv form .selectEvents .events {
+.eventsHeading .headerForm .formDiv form .selectEvents .events {
   padding: 15px 50px;
-  margin-right: 5px;
+  margin-right: 2px;
   border: none;
 }
-.eventsHeading .formDiv form .selectCategories .categories {
+.eventsHeading .headerForm .formDiv form .selectCategories .categories {
   padding: 15px 50px;
-  margin-right: 10px;
+  margin-right: 2px;
   border: none;
 }
-.eventsHeading .formDiv form .submitBtn .findBtn {
-  padding: 10px 35px;
-  margin-right: 10px;
+.eventsHeading .headerForm .formDiv form .submitBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 15px; */
+}
+.eventsHeading .headerForm .formDiv form .submitBtn .findBtn {
+  padding: 15px 35px;
   border: none;
   background-color: #6ac045;
   font-size: 13.3333px;
   color: white;
   font-weight: 400;
+  margin-left: 10px;
 }
 .exploreEventsSectionFilterAndCards {
   width: 100%;
@@ -71,7 +92,6 @@
 .exploreEventsSectionFilterAndCards .filterAndCards {
   width: 100%;
   max-width: 1200px;
-
   margin: 0 auto;
   display: flex;
   /* align-items: center; */
@@ -99,4 +119,21 @@
   padding: 8px 13px;
   border: 1px solid #cbced1;
   flex: 1;
+}
+@media (max-width: 768px) {
+  .eventsHeading .headerForm .formDiv {
+    width: 100%;
+    padding: 0 10px; /* Add padding for mobile screens */
+  }
+
+  .eventsHeading .headerForm .formDiv form {
+    flex-direction: column; /* Stack the form elements vertically */
+  }
+
+  .eventsHeading .headerForm .formDiv form .selectEvents .events,
+  .eventsHeading .headerForm .formDiv form .selectCategories .categories,
+  .eventsHeading .headerForm .formDiv form .submitBtn .findBtn {
+    width: 100%; /* Make the inputs take full width */
+    margin-bottom: 10px; /* Add space between form elements */
+  }
 }

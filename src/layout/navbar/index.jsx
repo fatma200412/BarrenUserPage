@@ -95,7 +95,7 @@ function Navbar() {
                 </div>
 
                 <div className={style.findMe}>
-                  <h2>Find me on</h2>
+                  <h2>Follow us</h2>
                   <div className={style.links}>
                     <button>
                       <a
@@ -142,20 +142,10 @@ function Navbar() {
                         <YouTubeIcon />
                       </a>
                     </button>
-                    <button>
-                      <a
-                        href="https://google.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <LanguageIcon />
-                      </a>
-                    </button>
+              
                   </div>
                 </div>
 
-                <p>Some contents...</p>
-                <p>Some contents...</p>
               </Drawer>
 
               <div className={style.iconAndBtns}>
@@ -187,9 +177,6 @@ function Navbar() {
                 <div className={style.btns}>
                   <button className={`${style.btns} ${style.user} `}>
                     <AccountCircleIcon style={{ fontSize: "20px" }} />
-                  </button>
-                  <button className={`${style.btns} ${style.light}`}>
-                    <Brightness7Icon style={{ fontSize: "20px" }} />
                   </button>
                 </div>
               </div>
