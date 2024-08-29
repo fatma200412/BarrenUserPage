@@ -7,6 +7,7 @@ import Register from "../pages/users/register";
 import UserRoot from "../pages/users/userRoot";
 import FAQ from "../pages/users/help/index";
 import ContactUs from "../pages/users/contactUs"
+import Details from "../pages/users/details";
 
 export const routes = [
   {
@@ -16,6 +17,14 @@ export const routes = [
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/cards",
+        element: <Home />,
+      },
+      {
+        path: "/cards/:id",
+        element: <Details />,
       },
       {
         path: "/exploreEvents",

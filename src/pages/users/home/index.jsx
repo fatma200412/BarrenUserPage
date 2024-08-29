@@ -113,39 +113,7 @@ function Home() {
           </button>
         </header>
         <section className={style.exploreEventsSectionFilterAndCards}>
-          <div className={style.filterAndCards}>
-            <div className={style.title}>
-              <h1>Explore Events</h1>
-            </div>
-            <div className={style.timesBtn}>
-              <button>All</button>
-              <button>Today</button>
-              <button>Tomorrow</button>
-              <button>This Week</button>
-              <button>This Weekend</button>
-              <button>Next Week</button>
-              <button>Next Weekend</button>
-              <button>This Month</button>
-              <button>Next Month</button>
-              <button>This Year</button>
-              <button>Next Year</button>
-            </div>
-
-            <div className={style.categoriyaBtns}>
-              <button>All</button>
-              <button>Arts</button>
-              <button>Business</button>
-              <button>Concertk</button>
-              <button>Workshops</button>
-              <button>Coaching and Consulting</button>
-              <button>Health and Wellbeing </button>
-              <button>Volunteer</button>
-              <button>Sports</button>
-              <button>Free</button>
-            </div>
-
-            <Cards />
-          </div>
+          <Cards />
         </section>
 
         <section className={style.onlineAndVenueEvents}>
@@ -166,14 +134,14 @@ function Home() {
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                 spaceBetween={15}
                 slidesPerView={3}
-                navigation={{
-                  nextEl: ".swiper-button-next",
-                  prevEl: ".swiper-button-prev",
-                }}
-                pagination={{ clickable: true }}
+                // navigation={{
+                //   nextEl: ".swiper-button-next",
+                //   prevEl: ".swiper-button-prev",
+                // }}
+                // pagination={{ clickable: true }}
                 // scrollbar={{ draggable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log("slide change")}
+                // onSwiper={(swiper) => console.log(swiper)}
+                // onSlideChange={() => console.log("slide change")}
                 autoplay={{
                   delay: 3000,
                   disableOnInteraction: false,
@@ -418,8 +386,8 @@ function Home() {
                     </SwiperSlide>
                   </Grid>
                 </Grid>
-                <div className="swiper-button-prev"></div>
-                <div className="swiper-button-next"></div>
+                {/* <div className="swiper-button-prev"></div>
+                <div className="swiper-button-next"></div> */}
               </Swiper>
             </div>
           </div>
@@ -1062,8 +1030,8 @@ function Home() {
                 }}
                 // pagination={{ clickable: true }}
                 // scrollbar={{ draggable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log("slide change")}
+                // onSwiper={(swiper) => console.log(swiper)}
+                // onSlideChange={() => console.log("slide change")}
                 autoplay={{
                   delay: 3000,
                   disableOnInteraction: false,

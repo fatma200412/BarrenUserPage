@@ -55,36 +55,7 @@ function ExploreEvents() {
           </div>
         </header>
         <section className={style.exploreEventsSectionFilterAndCards}>
-          <div className={style.filterAndCards}>
-            <div className={style.timesBtn}>
-              <button>All</button>
-              <button>Today</button>
-              <button>Tomorrow</button>
-              <button>This Week</button>
-              <button>This Weekend</button>
-              <button>Next Week</button>
-              <button>Next Weekend</button>
-              <button>This Month</button>
-              <button>Next Month</button>
-              <button>This Year</button>
-              <button>Next Year</button>
-            </div>
-
-            <div className={style.categoriyaBtns}>
-              <button>All</button>
-              <button>Arts</button>
-              <button>Business</button>
-              <button>Concertk</button>
-              <button>Workshops</button>
-              <button>Coaching and Consulting</button>
-              <button>Health and Wellbeing </button>
-              <button>Volunteer</button>
-              <button>Sports</button>
-              <button>Free</button>
-            </div>
-
-            <Cards />
-          </div>
+          <Cards />
         </section>
       </div>
     </>
