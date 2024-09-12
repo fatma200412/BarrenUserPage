@@ -1,18 +1,18 @@
 import React, { createContext, useState, useEffect } from "react";
 
-export const AdminAuth = createContext();
+export const UserAuth = createContext();
 
 export const AdminAuthProvider = ({ children }) => {
-  const [isLoginAdmin, setIsLoginAdmin] = useState(false);
+  const [isLoginUser, setIsLoginUser] = useState(false);
   const [userRole, setUserRole] = useState("");
 
   useEffect(() => {
     // debugger;
     // Load login state and role from localStorage if available
-    const storedIsLoginAdmin = localStorage.getItem("isLoginAdmin") === "true";
+    const storedIsLoginUser = localStorage.getItem("userPageInfo") === "true";
     const storedUserRole = localStorage.getItem("userRole");
 
-    console.log("Stored isLoginAdmin:", storedIsLoginAdmin);
+    console.log("Stored isLoginAdmin:", storedIsLoginUser);
     console.log("Stored userRole:", storedUserRole);
 
     //     if (storedIsLoginAdmin) {
@@ -23,16 +23,16 @@ export const AdminAuthProvider = ({ children }) => {
     //       setUserRole(storedUserRole);
     //     }
 
-    setIsLoginAdmin(storedIsLoginAdmin);
+    setIsLoginUser(storedIsLoginUser);
     setUserRole(storedUserRole);
   }, []);
 
-  console.log(isLoginAdmin);
+  console.log(isLoginUser);
   return (
-    <AdminAuth.Provider
-      value={{ isLoginAdmin, setIsLoginAdmin, userRole, setUserRole }}
+    <UserAuth.Provider
+      value={{ isLoginUser, setIsLoginUser, userRole, setUserRole }}
     >
       {children}
-    </AdminAuth.Provider>
+    </UserAuth.Provider>
   );
 };

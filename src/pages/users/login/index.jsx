@@ -14,13 +14,87 @@ import { login } from "../../../redux/slices/userSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import { UserAuth } from "../../context/userAuth";
+import { useContext } from "react";
+// import { UserAuth } from "../../../context/userAuth";
 
 function Login() {
   const initialValues = { email: "", password: "" };
-  const isLogin = useSelector((state) => state.user.isLogin);
+  // const isLogin = useSelector((state) => state.user.isLogin);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(isLogin);
+  const { setIsLoginUser, setUserRole } = useContext(UserAuth);
+
+  const handleLogin = (values) => {
+    axios
+      .post("http://localhost:5011/api/Auth/SignIn", values, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        const {
+          token,
+          roles,
+          firstName,
+          lastName,
+          email,
+          country,
+          city,
+          addres,
+        } = res.data.result;
+        if (token) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Logging in",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          const userInfo = {
+            token,
+            roles,
+            firstName,
+            lastName,
+            email,
+            country,
+            city,
+            addres,
+          };
+          localStorage.setItem("userPageInfo", JSON.stringify(userInfo));
+
+          dispatch(login(userInfo));
+
+          setIsLoginUser(true);
+          let userRole = JSON.parse(localStorage.getItem("userPageInfo")).roles;
+          console.log("userRole", userRole.toString());
+          setUserRole(userRole.toString());
+
+          localStorage.setItem("isLoginAdmin", true);
+          localStorage.setItem("userRole", JSON.stringify(userRole.toString()));
+
+          navigate("/admin");
+        } else {
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Password or username is incorrect",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      })
+      .catch((error) => {
+        console.error("Login failed:", error.message);
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: "An error occurred",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
+  };
   return (
     <div className={style.loginPages}>
       <div className={style.left}>
@@ -46,26 +120,89 @@ function Login() {
             initialValues={initialValues}
             onSubmit={(values, actions) => {
               console.log(values.email);
-              axios("https://669b5625276e45187d352b89.mockapi.io/users").then(
-                (res) => {
-                  let data = res.data;
-                  let userFound = false;
-                  for (let user of data) {
-                    if (
-                      user.email == values.email &&
-                      user.password == values.password
-                    ) {
-                      userFound = true;
-                      dispatch(login(user));
-                      navigate("/admin");
-                      break;
-                    }
-                    if (!userFound) {
-                      console.log("sifre veya istifadeci adi yalnisdir");
-                    }
-                  }
-                }
-              );
+              handleLogin(values);
+              // axios
+              //   .post("http://localhost:5011/api/Auth/SignIn", values, {
+              //     headers: {
+              //       "Content-Type": "application/json",
+              //     },
+              //   })
+              //   .then((res) => {
+              //     const { token, roles } = res.data.result;
+              //     console.log(res.data.result);
+              //     if (token) {
+              //       Swal.fire({
+              //         position: "center",
+              //         icon: "success",
+              //         title: "Logging in",
+              //         showConfirmButton: false,
+              //         timer: 1500,
+              //       });
+              //       localStorage.setItem("token", token);
+              //       localStorage.setItem("roles", roles);
+              //       dispatch(login({ email: values.email, roles }));
+              //       navigate("/admin");
+              //     } else {
+              //       Swal.fire({
+              //         position: "center",
+              //         icon: "error",
+              //         title: "Password or username is incorrect",
+              //         showConfirmButton: false,
+              //         timer: 1500,
+              //       });
+              //     }
+              //     // let data = res.data;
+              //     // let userFound = false;
+              //     // for (let user of data) {
+              //     //   if (
+              //     //     user.email == values.email &&
+              //     //     user.password == values.password
+              //     //   ) {
+              //     //     Swal.fire({
+              //     //       position: "center",
+              //     //       icon: "success",
+              //     //       title: "Logging in",
+              //     //       showConfirmButton: false,
+              //     //       timer: 1500,
+              //     //     });
+              //     //     userFound = true;
+              //     //     dispatch(login(user));
+              //     //     navigate("/admin");
+              //     //     break;
+              //     //   }
+              //     //   if (!userFound) {
+              //     //     {
+              //     //       Swal.fire({
+              //     //         position: "center",
+              //     //         icon: "error",
+              //     //         title: "Password or username is incorrect",
+              //     //         showConfirmButton: false,
+              //     //         timer: 1500,
+              //     //       });
+              //     //     }
+              //     //     console.log("sifre veya istifadeci adi yalnisdir");
+              //     //   }
+              //     // }
+              //   })
+              //   .catch((error) => {
+              //     console.error(
+              //       "Login failed:",
+              //       error.response?.data || error.message
+              //     );
+              //     if (error.response?.data?.errors) {
+              //       console.error(
+              //         "Validation errors:",
+              //         error.response.data.errors
+              //       );
+              //     }
+              //     Swal.fire({
+              //       position: "center",
+              //       icon: "error",
+              //       title: "An error occurred",
+              //       showConfirmButton: false,
+              //       timer: 1500,
+              //     });
+              //   });
             }}
           >
             <Form className={style.form}>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import style from "./index.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import logo from "../../assets/images/header/logo (1).svg";
@@ -13,6 +13,29 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LanguageIcon from "@mui/icons-material/Language";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../redux/slices/userSlice";
+import { Modal } from "@mui/material";
+import Backdrop from "@mui/material/Backdrop";
+import Box from "@mui/material/Box";
+import Fade from "@mui/material/Fade";
+import Typography from "@mui/material/Typography";
+
+const ModalStyle = {
+  position: "absolute",
+  top: "150px",
+  right: "0",
+  transform: "translate(-50%, -50%)",
+  width: 250,
+  bgcolor: "background.paper",
+  // border: "2px solid #000",
+  boxShadow: 24,
+  // p: 4,
+  height: "auto",
+  // display: "flex",
+  // flexDirection: "column",
+  // alignItems: "center",
+};
 
 function Navbar() {
   // const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +44,13 @@ function Navbar() {
   //   setMenuOpen(!menuOpen);
   //   console.log("Menu Open:", !menuOpen);
   // }
+  const user = useSelector((state) => state.user.userPageInfo);
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   const [placement, setPlacement] = useState("left");
   const showDrawer = () => {
     setOpen(true);
@@ -32,6 +61,36 @@ function Navbar() {
   const onChange = (e) => {
     setPlacement(e.target.value);
   };
+
+  const handleOpen = () => setOpenModal(true);
+  const handleClose = () => setOpenModal(false);
+
+  function handleLogout() {
+    // localStorage.removeItem("isLogin");
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, sign out!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Sign Outed!",
+          text: "Profile sign outed",
+          icon: "success",
+        });
+        dispatch(logout());
+        navigate("/login");
+      }
+    });
+  }
+
+  const userRoles = JSON.parse(localStorage.getItem("userInfo")).roles;
+  console.log(user);
+
   return (
     <>
       <nav>
@@ -142,10 +201,8 @@ function Navbar() {
                         <YouTubeIcon />
                       </a>
                     </button>
-              
                   </div>
                 </div>
-
               </Drawer>
 
               <div className={style.iconAndBtns}>
@@ -175,7 +232,10 @@ function Navbar() {
                   </button>
                 </div>
                 <div className={style.btns}>
-                  <button className={`${style.btns} ${style.user} `}>
+                  <button
+                    className={`${style.btns} ${style.user} `}
+                    onClick={handleOpen}
+                  >
                     <AccountCircleIcon style={{ fontSize: "20px" }} />
                   </button>
                 </div>
@@ -184,6 +244,74 @@ function Navbar() {
           </div>
         </header>
       </nav>
+
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        open={openModal}
+        onClose={handleClose}
+        closeAfterTransition
+        slots={{ backdrop: Backdrop }}
+        slotProps={{
+          backdrop: {
+            timeout: 500,
+          },
+        }}
+      >
+        <Fade in={openModal}>
+          <Box sx={ModalStyle}>
+            <Box className={style.title}>
+              {user != {} && (
+                <>
+                  <img
+                    src={user.image}
+                    alt="Profile"
+                    className={style.profileImageLarge}
+                  />
+
+                  <Typography
+                    variant="h6"
+                    component="h2"
+                    className={style.profileName}
+                  >
+                    {user.firstName} {user.lastName}
+                  </Typography>
+
+                  <p className={style.profileEmail}>{user.email}</p>
+                </>
+              )}
+            </Box>
+
+            {user == {} ? (
+              <>
+                <div className={style.btnModal}>
+                  <button
+                    onClick={() => navigate("/myProfile")}
+                    className={style.btn}
+                  >
+                    My Profile
+                  </button>
+                  <button onClick={handleLogout} className={style.btn}>
+                    Sign Out
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className={style.btnModal}>
+                  <Link to="/login" className={style.iconAndNav}>
+                    Login
+                  </Link>
+                  <br />
+                  <Link to="/register" className={style.iconAndNav}>
+                    Register
+                  </Link>
+                </div>
+              </>
+            )}
+          </Box>
+        </Fade>
+      </Modal>
     </>
   );
 }
