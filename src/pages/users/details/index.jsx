@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "./index.module.css";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -17,10 +17,12 @@ import {
   faCalendarDay,
   faCalendarDays,
 } from "@fortawesome/free-solid-svg-icons";
-import { faBookmark } from "@fortawesome/free-regular-svg-icons";
+// import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import Grid from "@mui/material/Grid";
 import { faAccessibleIcon } from "@fortawesome/free-brands-svg-icons";
 import Cards from "../../../components/cards";
+import { faBookmark as regularBookmark } from "@fortawesome/free-regular-svg-icons"; // Regular bookmark
+import { faBookmark as solidBookmark } from "@fortawesome/free-solid-svg-icons"; // Solid bookmark
 
 const formatDuration = (minutes) => {
   const hours = Math.floor(minutes / 60);
@@ -29,16 +31,34 @@ const formatDuration = (minutes) => {
 };
 
 function Details() {
+  const navigator = useNavigate();
+
   const { id } = useParams();
 
   const [card, setCard] = useState({});
   const [countdown, setCountdown] = useState({});
+  const [isBookmarked, setIsBookmarked] = useState(false);
 
   useEffect(() => {
     axios("http://localhost:5011/api/Event/GetByIdEvent/" + id).then((res) => {
       console.log(res.data);
       setCard(res.data);
     });
+  }, [id]);
+
+  useEffect(() => {
+    const bookmarkedEvents =
+      JSON.parse(localStorage.getItem("savedEvents")) || [];
+    const isEventBookmarked = bookmarkedEvents.find((event) => event.id === id);
+
+    console.log(bookmarkedEvents);
+    console.log(bookmarkedEvents.some((event) => event.id == id));
+
+    console.log();
+
+    console.log(isEventBookmarked);
+
+    setIsBookmarked(isEventBookmarked);
   }, [id]);
 
   useEffect(() => {
@@ -89,7 +109,26 @@ function Details() {
     ? formatDate(card.beginTime)
     : { month: "", day: "", formattedDateTime: "" };
 
-  console.log(formattedDateTime.split(","));
+  const toggleBookmark = () => {
+    let bookmarkedEvents =
+      JSON.parse(localStorage.getItem("savedEvents")) || [];
+
+    const eventIndex = bookmarkedEvents.findIndex((elem) => elem.id === id);
+
+    if (eventIndex !== -1) {
+      // If event is already bookmarked, remove it
+      bookmarkedEvents = bookmarkedEvents.filter((elem) => elem.id !== id);
+      setIsBookmarked(false);
+    } else {
+      // If event is not bookmarked, add it
+      bookmarkedEvents.push(card);
+      setIsBookmarked(true);
+    }
+
+    // Update localStorage
+    localStorage.setItem("savedEvents", JSON.stringify(bookmarkedEvents));
+  };
+
   return (
     <>
       <div className={style.detailpage}>
@@ -142,14 +181,11 @@ function Details() {
 
                 <div className={style.saveAndShare}>
                   <div className={style.save}>
-                    <button>
-                      <FontAwesomeIcon icon={faBookmark} /> Save
-                    </button>
-                  </div>
-
-                  <div className={style.share}>
-                    <button>
-                      <FontAwesomeIcon icon={faShareAlt} /> Share
+                    <button onClick={toggleBookmark}>
+                      <FontAwesomeIcon
+                        icon={isBookmarked ? solidBookmark : regularBookmark}
+                      />{" "}
+                      {isBookmarked ? "Saved" : "Save"}
                     </button>
                   </div>
                 </div>
@@ -263,7 +299,13 @@ function Details() {
                       <h5>AUD $0.00</h5>
                     </div>
                     <div className={style.bookNowBtn}>
-                      <button>Book Now</button>
+                      <button
+                        onClick={() => {
+                          navigator(`/cards/${id}/bookNow`);
+                        }}
+                      >
+                        Book Now
+                      </button>
                     </div>
                   </div>
                 </div>

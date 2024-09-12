@@ -1,0 +1,338 @@
+.bookNowPage {
+  /* max-width: 1200px; */
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f5f7f9;
+  border: 1px solid;
+  border-color: transparent;
+}
+.headerHelp {
+  width: 100%;
+  margin: 0 auto;
+  background-image: url("https://www.gambolthemes.net/html-items/barren-html/disable-demo-link/images/banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2%;
+  margin-bottom: 10px;
+}
+.headerHelp .navigate {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  flex-direction: column;
+}
+.headerHelp .navigate p {
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none solid rgb(106, 192, 69);
+}
+.headerHelp .navigate p .home {
+  color: black;
+  padding: 0 10px;
+}
+.headerHelp .navigate p .home:hover {
+  color: #6ac045;
+}
+.headerHelp .navigate p .faq {
+  color: #717171;
+  padding: 0 10px;
+}
+
+.faqAndAnswerSection {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  /* padding-top: 5%; */
+}
+.faqAndAnswerSection .titleSection {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  /* flex-direction: column; */
+}
+.faqAndAnswerSection .titleSection .title {
+  /* margin: 0 auto; */
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+}
+
+.faqAndAnswerSection .titleSection .title h1 {
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none solid rgb(0, 0, 0);
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+.faqAndAnswerSection .titleSection .title p {
+  color: #717171;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none solid rgb(113, 113, 113);
+  margin-bottom: 40px;
+}
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.month,
+.day {
+  padding: 8px 30px;
+  /* margin: 5px; */
+}
+
+.month {
+  background-color: #6ac045;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none solid rgb(255, 255, 255);
+}
+
+.day {
+  background-color: white;
+  font-size: 30px;
+  font-weight: 500;
+  text-decoration: none solid rgb(0, 0, 0);
+}
+
+.aboutDetail {
+  width: 100%;
+  margin: 0 auto;
+  /* padding: 5%; */
+  margin-bottom: 60px;
+}
+.aboutDetail .aboutTitleAndPicture {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.aboutDetail .eventDetailBox {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 5px;
+}
+.aboutDetail .eventDetailBox .title {
+  border-bottom: 1px solid #e3e3e3;
+  padding: 17px 15px;
+}
+.aboutDetail .eventDetailBox .title h2 {
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none solid rgb(0, 0, 0);
+}
+.aboutDetail .eventDetailBox .countDown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 5px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.aboutDetail .eventDetailBox .countDown .days,
+.aboutDetail .eventDetailBox .countDown .hours,
+.aboutDetail .eventDetailBox .countDown .minutes,
+.aboutDetail .eventDetailBox .countDown .seconds {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #6ac045;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  width: 100px;
+  height: 80px;
+}
+.aboutDetail .eventDetailBox .countDown .days h6,
+.aboutDetail .eventDetailBox .countDown .hours h6,
+.aboutDetail .eventDetailBox .countDown .minutes h6,
+.aboutDetail .eventDetailBox .countDown .seconds h6 {
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.aboutDetail .eventDetailBox .organisedBy,
+.aboutDetail .eventDetailBox .dateAndTime,
+.aboutDetail .eventDetailBox .location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.aboutDetail .eventDetailBox .organisedBy .icons,
+.aboutDetail .eventDetailBox .dateAndTime .icons,
+.aboutDetail .eventDetailBox .location .icons {
+  /* border: 1px solid black; */
+  background-color: #e8f7f7;
+  border-radius: 50%;
+  padding: 8px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.aboutDetail .eventDetailBox .organisedBy .icons .icon,
+.aboutDetail .eventDetailBox .dateAndTime .icons .icon,
+.aboutDetail .eventDetailBox .location .icons .icon {
+  font-size: 16px;
+  font-weight: 900;
+  color: #6ac045;
+}
+.aboutDetail .eventDetailBox .organisedBy .about .titleAbout,
+.aboutDetail .eventDetailBox .dateAndTime .about .titleAbout,
+.aboutDetail .eventDetailBox .location .about .titleAbout {
+  color: #717171;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none solid rgb(113, 113, 113);
+  margin-bottom: 8px;
+}
+.aboutDetail .eventDetailBox .organisedBy .about p,
+.aboutDetail .eventDetailBox .dateAndTime .about p,
+.aboutDetail .eventDetailBox .location .about p {
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none solid rgb(0, 0, 0);
+  margin-bottom: 8px;
+}
+.aboutDetail .eventDetailBox .organisedBy .about button,
+.aboutDetail .eventDetailBox .dateAndTime .about button,
+.aboutDetail .eventDetailBox .location .about button {
+  border: none;
+  color: #6ac045;
+  background-color: white;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none solid rgb(122, 210, 84);
+}
+.eventDetails {
+  display: flex;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.eventDetails .image {
+  width: 100px;
+  height: 100px;
+}
+.eventDetails .image img {
+  width: 100%;
+  height: 100%;
+}
+.eventDetails .eventTitle {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+.eventDetails .eventTitle .eventName h6 {
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none solid rgb(0, 0, 0);
+  margin-bottom: 18px;
+}
+.eventDetails .eventTitle .eventDate p {
+  color: #717171;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none solid rgb(113, 113, 113);
+  margin-bottom: 18px;
+}
+.eventDetails .eventTitle .eventType p {
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none solid rgb(0, 0, 0);
+}
+.totalTicket {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+.totalTicket .titleTicket h6 {
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none solid rgb(0, 0, 0);
+}
+.totalTicket .priceAbout p {
+  color: #717171;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none solid rgb(113, 113, 113);
+}
+.totalTicket .priceAbout .priceTotal {
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+}
+
+.aboutDetail .eventDetailBox .ticketAbout {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.aboutDetail .eventDetailBox .ticketAbout .couponCode p {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.aboutDetail .eventDetailBox .ticketAbout .couponInput {
+  display: flex;
+  margin-bottom: 30px;
+}
+.aboutDetail .eventDetailBox .ticketAbout .couponInput input {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  border-color: #e3e3e3;
+  background-color: #f7f7f7;
+}
+.aboutDetail .eventDetailBox .ticketAbout .couponInput button {
+  display: inline;
+  padding: 10px 12px;
+  background-color: #6ac045;
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none solid rgb(255, 255, 255);
+}
+.aboutDetail .eventDetailBox .ticketAbout .bookNowBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.aboutDetail .eventDetailBox .ticketAbout .bookNowBtn button {
+  width: 100%;
+  padding: 20px;
+  background-color: #6ac045;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none solid rgb(255, 255, 255);
+}
+.aboutDetail .eventDetailBox .ticketAbout .footer {
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none solid rgb(0, 0, 0);
+  text-align: center;
+  margin-bottom: 10px;
+}

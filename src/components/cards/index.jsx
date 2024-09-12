@@ -5,6 +5,7 @@ import {
   faRightLong,
   faCalendar,
   faClock,
+  faBookBookmark,
 } from "@fortawesome/free-solid-svg-icons";
 
 import Grid from "@mui/system/Unstable_Grid";
@@ -14,7 +15,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { faBookmark } from "@fortawesome/free-regular-svg-icons";
+import { faBookmark as faBookmarkSolid } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark as faBookmarkRegular } from "@fortawesome/free-regular-svg-icons";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -40,6 +42,21 @@ function Cards() {
   const [eventCategory, setEventCategory] = useState("All");
   const [loading, setLoading] = useState(true); // State to handle loading
   const [error, setError] = useState(null);
+
+  const [save, setSave] = useState([]);
+
+  useEffect(() => {
+    // Load saved data from localStorage when the component mounts
+    const savedEvents = localStorage.getItem("savedEvents");
+    if (savedEvents) {
+      setSave(JSON.parse(savedEvents));
+    }
+  }, []);
+
+  useEffect(() => {
+    // Save the current `save` state to localStorage whenever it changes
+    localStorage.setItem("savedEvents", JSON.stringify(save));
+  }, [save]);
 
   useEffect(() => {
     let apiEndPoint = "http://localhost:5011/api/Event/events";
@@ -171,8 +188,8 @@ function Cards() {
 
   const getCategoryId = (categoryName) => {
     const categories = {
-      "Arts": 1,
-      "Business": 2,
+      Arts: 1,
+      Business: 2,
       "Education and Training": 3,
       "Family and Friends": 4,
       "Food and Drink": 5,
@@ -185,11 +202,13 @@ function Cards() {
       "Travel and Outdoor": 13,
       "Community and Culture": 14,
       "Coaching and Consulting": 15,
-      "Others": 16,
+      Others: 16,
     };
 
     return categories[categoryName] || "All";
   };
+  // console.log(data);
+  // console.log(save);
 
   return (
     <>
@@ -297,9 +316,47 @@ function Cards() {
                               e.stopPropagation();
                               e.preventDefault();
                               console.log(elem.id);
+                              console.log(e.currentTarget);
+                              console.log(elem.id);
+                              console.log(
+                                save?.find((savaElem) => savaElem.id == elem.id)
+                              );
+                              if (
+                                save.some(
+                                  (savedElem) => savedElem.id === elem.id
+                                )
+                              ) {
+                                setSave(
+                                  save.filter(
+                                    (savedElem) => savedElem.id !== elem.id
+                                  )
+                                );
+                              } else {
+                                setSave([...save, elem]);
+                              }
+                              // if (save?.find((elems) => elems.id == elem.id)) {
+                              //   console.log("mehsul var");
+
+                              //   let arr = [...save];
+
+                              //   arr ==
+                              //     save.filter(
+                              //       (saveElem) => saveElem.id !== elem.id
+                              //     );
+
+                              //   setSave([...arr]);
+                              // } else {
+                              //   setSave([...save, elem]);
+                              // }
                             }}
                           >
-                            <FontAwesomeIcon icon={faBookmark} />
+                            {save?.find(
+                              (saveElem) => saveElem.id == elem.id
+                            ) ? (
+                              <FontAwesomeIcon icon={faBookmarkSolid} />
+                            ) : (
+                              <FontAwesomeIcon icon={faBookmarkRegular} />
+                            )}
                           </button>
                           <div className={style.cardFooter}>
                             <p>
